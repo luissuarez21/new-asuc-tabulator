@@ -72,7 +72,9 @@ def auto_detect_races(df: pd.DataFrame) -> Dict[str, Dict]:
     column_groups = {}
     for col in df.columns:
         # Match pattern: "Something - NUMBER" or "Something Candidates - NUMBER"
-        match = re.match(r'^(.+?)\s*(?:Candidates)?\s*-\s*(\d+)$')
+        # BUG FIX: was missing `col` as the second argument to re.match(),
+        # causing a TypeError and no races being detected at all.
+        match = re.match(r'^(.+?)\s*(?:Candidates)?\s*-\s*(\d+)$', col)
         if match:
             base_name = match.group(1).strip()
             rank_num = int(match.group(2))
@@ -88,8 +90,8 @@ def auto_detect_races(df: pd.DataFrame) -> Dict[str, Dict]:
     # Sort and create race configs
     for base_name, column_list in column_groups.items():
         # Sort by rank number
-        columns_list.sort(key=lambda x: x[0])
-        columns = [col for rank, col in columns_list]
+        column_list.sort(key=lambda x: x[0])
+        columns = [col for rank, col in column_list]
 
         #Determine race type
         race_lower = base_name.lower()
@@ -158,7 +160,7 @@ def auto_detect_propositions(df: pd.DataFrame) -> Dict[str, Dict]:
         col_lower = col.lower()
 
         # check if it is a proposition column (short name, not description of proposition)
-        if 'proposition' in col_lower and len(col) < 50:
+        if 'proposition' in col_lower and len(col) < 125:
             # Extract Proposition ID
             match = re.match(r'(proposition)\s+([0-9]+[a-z]?)', col, re.IGNORECASE)
             if match:
@@ -166,10 +168,20 @@ def auto_detect_propositions(df: pd.DataFrame) -> Dict[str, Dict]:
                 prop_num = match.group(2).upper()
                 prop_id = f"{prop_type} {prop_num}"
 
-                propositions[prop_id] = {
-                    "name": col.strip(),
-                    "column": col
-                }
+                # BUG FIX: previously this unconditionally overwrote any existing
+                # entry for the same prop_id. When the same proposition appears
+                # twice in the CSV (for randomization), the second column silently
+                # replaced the first, causing half the votes to be missed.
+                # Fix: only store the first occurrence; get_proposition_votes already
+                # handles pandas-suffixed duplicates (e.g. "Proposition 26B: ...".1)
+                # via its startswith check. For duplicates with slightly different
+                # names (e.g. trailing \xa0), we strip and normalize before comparing.
+                normalized_col = col.strip().rstrip('\xa0').strip()
+                if prop_id not in propositions:
+                    propositions[prop_id] = {
+                        "name": normalized_col,
+                        "column": col  # keep original column name for df lookup
+                    }
 
     return propositions
 
@@ -181,7 +193,12 @@ def extract_race_ballots(df: pd.DataFrame, race_config: Dict[str, any]) -> List[
 
     column_sets = []
     for base_col in base_columns:
-        variants = [col for col in df.columns if col == base_col or col]
+        # BUG FIX: was `col == base_col or col`, but `or col` is always True for
+        # any non-empty string, so `variants` became every column in the dataframe.
+        # Fixed to match only the exact column and its pandas-suffixed duplicates
+        # (e.g. "Senate - 1" and "Senate - 1.1") so that randomized duplicate
+        # ballot columns are coalesced correctly per voter row.
+        variants = [col for col in df.columns if col == base_col or col.startswith(base_col + '.')]
         if variants:
             column_sets.append(variants)
     
@@ -210,32 +227,84 @@ def extract_race_ballots(df: pd.DataFrame, race_config: Dict[str, any]) -> List[
     print(f"  [OK] {race_name}: {len(ballots)} valid ballots extracted")
     return ballots
 
-def get_proposition_votes(df: pd.DataFrame, prop_config: Dict[str, str]) -> Dict[str, int]:
-    """Count Yes/No/Abstain votes for a proposition (same as before)."""
-    base_column = prop_config['column']
-    column_variants = [col for col in df.columns if col == base_column or col.startswith(base_column + '.')]
+# ---------------------------------------------------------------------------
+# 2026 election: exact column names per proposition, one per ballot type.
+# The CSV has four ballot variants (Grad A, Grad B, UG A, UG B); each voter
+# has a non-null value in exactly one column for each proposition they see.
+# (26C is grad-only so it only has two columns.)
+# ---------------------------------------------------------------------------
+PROP_COLUMNS_2026: Dict[str, List[str]] = {
+    "Proposition 26A": [
+        "Proposition 26A: The S.T.R.O.N.G Act\xa0",   # Grad Ballot A
+        "Proposition 26A: The S.T.R.O.N.G Act",         # Grad Ballot B
+        "Proposition 26A: The S.T.R.O.N.G Act.1",       # UG Ballot A
+        "Proposition 26A: The S.T.R.O.N.G Act\xa0.1",  # UG Ballot B
+    ],
+    "Proposition 26B": [
+        "Proposition 26B: Save Free Student Press",      # Grad Ballot A
+        "Proposition 26B: Save Free Student Press.1",    # Grad Ballot B
+        "Proposition 26B: Save Free Student Press.2",    # UG Ballot A
+        "Proposition 26B: Save Free Student Press.3",    # UG Ballot B
+    ],
+    "Proposition 26C": [
+        "Proposition 26C: GA Fee 2.0",                   # Grad Ballot A
+        "Proposition 26C: GA Fee 2.0.1",                 # Grad Ballot B
+        # No UG columns — 26C is a graduate-student fee proposition
+    ],
+    "Proposition 26D": [
+        "Proposition 26D:\xa0Student Call for University-Wide Divestment from Companies Producing Military Weapons Technology",       # Grad Ballot A
+        "Proposition 26D:\xa0Student Call for University-Wide Divestment from Companies Producing Military Weapons Technology\xa0",   # Grad Ballot B
+        "Proposition 26D:\xa0Student Call for University-Wide Divestment from Companies Producing Military Weapons Technology\xa0.1", # UG Ballot A
+        "Proposition 26D:\xa0Student Call for University-Wide Divestment from Companies Producing Military Weapons Technology\xa0.2", # UG Ballot B
+    ],
+}
 
-    if not column_variants:
-        print(f"  [WARNING] Proposition column '{base_column}' not found")
+
+def get_proposition_votes(df: pd.DataFrame, prop_config: Dict[str, str], prop_id: str = "") -> Dict[str, int]:
+    """
+    Count Yes/No/Abstain votes for a proposition.
+
+    Uses hardcoded column lists for the 2026 election (PROP_COLUMNS_2026).
+    Each voter has a non-null value in exactly one column (their ballot type);
+    the rest are NaN.  NaN rows are skipped — they are not abstentions.
+    """
+    columns = PROP_COLUMNS_2026.get(prop_id, [])
+
+    if not columns:
+        print(f"  [WARNING] No hardcoded columns for '{prop_id}' — skipping")
+        return {"yes": 0, "no": 0, "abstain": 0}
+
+    # Only keep columns that actually exist in this CSV
+    present = [c for c in columns if c in df.columns]
+    missing = [c for c in columns if c not in df.columns]
+    if missing:
+        print(f"  [WARNING] {prop_id}: {len(missing)} expected column(s) not found in CSV:")
+        for m in missing:
+            print(f"    {repr(m)}")
+
+    if not present:
+        print(f"  [WARNING] No columns found for {prop_id}")
         return {"yes": 0, "no": 0, "abstain": 0}
 
     votes = {"yes": 0, "no": 0, "abstain": 0}
 
-    for idx, row in df.iterrows():
-        value = coalesce_row_values(row, column_variants)
+    for _, row in df.iterrows():
+        # Take the first non-null value across all ballot-type columns
+        value = coalesce_row_values(row, present)
 
-        if pd.isna(value) or value == "":
+        if pd.isna(value) or str(value).strip() == "":
+            # NaN means this voter's ballot did not include this question.
+            # For 26C that means they are undergrads — do not count as abstain.
+            continue
+
+        value_clean = str(value).strip().lower()
+        if value_clean == "yes":
+            votes["yes"] += 1
+        elif value_clean == "no":
+            votes["no"] += 1
+        elif value_clean == "abstain":
             votes["abstain"] += 1
-        else:
-            value_lower = str(value).strip().lower()
-            if value_lower == "yes":
-                votes["yes"] += 1
-            elif value_lower == "no":
-                votes["no"] += 1
-            elif value_lower == "abstain":
-                votes["abstain"] += 1
-            else:
-                votes["abstain"] += 1
+        # Any other unexpected value is silently ignored
 
     return votes
 
