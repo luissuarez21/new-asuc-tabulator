@@ -46,24 +46,24 @@
       cursor: pointer; text-decoration: none; flex-shrink: 0;
     }
     .hdr-logo img { width: 34px; height: 34px; border-radius: 50%; }
-    .logo-asuc  { font-size: 0.9rem; font-weight: 800; color: var(--gold); letter-spacing: .04em; }
-    .logo-sub   { font-size: 0.6rem; font-weight: 500; color: rgba(255,255,255,.38); margin-top: 1px; }
+    .logo-asuc  { font-size: 1.05rem; font-weight: 800; color: var(--gold); letter-spacing: .04em; }
+    .logo-sub   { font-size: 0.68rem; font-weight: 500; color: rgba(255,255,255,.38); margin-top: 1px; }
     .hdr-sep    { width: 1px; height: 22px; background: rgba(255,255,255,.12); flex-shrink: 0; }
-    .hdr-title  { font-size: .82rem; font-weight: 600; color: rgba(255,255,255,.7); flex: 1; }
+    .hdr-title  { font-size: .96rem; font-weight: 600; color: rgba(255,255,255,.7); flex: 1; }
     .ballot-chip {
       margin-left: auto;
       display: flex; align-items: baseline; gap: 4px;
       padding: 4px 11px;
       background: rgba(253,181,21,.1); border: 1px solid rgba(253,181,21,.2); border-radius: 20px;
     }
-    .ballot-chip .n { font-family: var(--mono); font-size: .8rem; font-weight: 700; color: var(--gold); }
-    .ballot-chip .l { font-size: .58rem; font-weight: 600; color: rgba(255,255,255,.35); text-transform: uppercase; letter-spacing: .05em; }
+    .ballot-chip .n { font-family: var(--mono); font-size: .94rem; font-weight: 700; color: var(--gold); }
+    .ballot-chip .l { font-size: .7rem; font-weight: 600; color: rgba(255,255,255,.35); text-transform: uppercase; letter-spacing: .05em; }
 
     /* ── Nav tabs ───────────────────────────────────────────── */
     .nav { background: var(--blue); border-top: 1px solid rgba(255,255,255,.07); }
     .nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 28px; display: flex; }
     .nav-tab {
-      padding: 11px 22px; font-size: .8rem; font-weight: 600;
+      padding: 11px 22px; font-size: .93rem; font-weight: 600;
       color: rgba(255,255,255,.5); cursor: pointer;
       border-bottom: 3px solid transparent; transition: all .18s ease;
       user-select: none; letter-spacing: .01em;
@@ -76,8 +76,8 @@
     .section { display: none; }
     .section.active { display: block; }
 
-    .sec-title { font-size: 1.35rem; font-weight: 800; color: var(--blue); letter-spacing: -.03em; margin-bottom: 4px; }
-    .sec-sub   { font-size: .78rem; color: var(--t3); font-weight: 500; margin-bottom: 26px; }
+    .sec-title { font-size: 1.6rem; font-weight: 800; color: var(--blue); letter-spacing: -.03em; margin-bottom: 4px; }
+    .sec-sub   { font-size: .92rem; color: var(--t3); font-weight: 500; margin-bottom: 26px; }
 
     /* ── Loading / Error ────────────────────────────────────── */
     .loading { text-align: center; padding: 90px 20px; color: var(--t3); }
@@ -87,13 +87,13 @@
     /* ── Stats strip (overview) ─────────────────────────────── */
     .stats-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-bottom: 30px; }
     .stat-box { background: var(--surface); border-radius: var(--r); border: 1px solid var(--border); box-shadow: var(--shadow); padding: 18px 16px; text-align: center; }
-    .stat-n { font-family: var(--mono); font-size: 1.8rem; font-weight: 700; color: var(--blue); line-height: 1; }
-    .stat-l { font-size: .65rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--t3); margin-top: 4px; }
+    .stat-n { font-family: var(--mono); font-size: 2.1rem; font-weight: 700; color: var(--blue); line-height: 1; }
+    .stat-l { font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--t3); margin-top: 4px; }
 
     /* ── Race selector chips ────────────────────────────────── */
     .race-selector { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
     .race-chip {
-      padding: 7px 16px; border-radius: 20px; font-size: .78rem; font-weight: 600;
+      padding: 7px 16px; border-radius: 20px; font-size: .9rem; font-weight: 600;
       cursor: pointer; border: 1px solid var(--border); background: var(--surface);
       color: var(--t2); transition: all .15s ease; user-select: none;
     }
@@ -109,20 +109,20 @@
       display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;
     }
 
-    .rpanel-title { font-size: 1rem; font-weight: 700; color: var(--blue); }
-    .rpanel-meta  { font-size: .7rem; color: var(--t3); font-family: var(--mono); margin-top: 2px; }
+    .rpanel-title { font-size: 1.2rem; font-weight: 700; color: var(--blue); }
+    .rpanel-meta  { font-size: .82rem; color: var(--t3); font-family: var(--mono); margin-top: 2px; }
 
     .winner-badge {
       display: inline-flex; align-items: center; gap: 6px;
       padding: 5px 14px; border-radius: 20px;
       background: linear-gradient(135deg, var(--gold), #f0a800);
-      color: var(--blue); font-size: .75rem; font-weight: 700;
+      color: var(--blue); font-size: .88rem; font-weight: 700;
     }
 
     /* view-mode toggle */
     .view-toggle { display: flex; gap: 0; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
     .vt-btn {
-      padding: 6px 14px; font-family: inherit; font-size: .72rem; font-weight: 600;
+      padding: 6px 14px; font-family: inherit; font-size: .85rem; font-weight: 600;
       cursor: pointer; background: var(--surface); color: var(--t3); border: none;
       transition: all .14s ease;
     }
@@ -136,7 +136,7 @@
     .step-btn {
       display: inline-flex; align-items: center; gap: 5px;
       padding: 8px 18px; border-radius: 8px; font-family: inherit;
-      font-size: .78rem; font-weight: 600; cursor: pointer;
+      font-size: .9rem; font-weight: 600; cursor: pointer;
       border: 1px solid var(--border); background: var(--surface); color: var(--t2);
       transition: all .14s ease;
     }
@@ -145,15 +145,15 @@
     .step-btn.primary { background: var(--blue); color: white; border-color: var(--blue); }
     .step-btn.primary:hover:not(:disabled) { background: #004d96; }
 
-    .step-info { flex: 1; text-align: center; font-size: .78rem; font-weight: 600; color: var(--t2); }
-    .step-sub  { font-size: .65rem; color: var(--t3); font-family: var(--mono); display: block; margin-top: 1px; }
+    .step-info { flex: 1; text-align: center; font-size: .9rem; font-weight: 600; color: var(--t2); }
+    .step-sub  { font-size: .78rem; color: var(--t3); font-family: var(--mono); display: block; margin-top: 1px; }
 
     /* ── Bar chart ──────────────────────────────────────────── */
-    .round-label { font-size: .78rem; font-weight: 700; color: var(--blue); margin-bottom: 4px; }
-    .round-meta  { font-size: .68rem; color: var(--t3); font-family: var(--mono); margin-bottom: 14px; }
+    .round-label { font-size: .92rem; font-weight: 700; color: var(--blue); margin-bottom: 4px; }
+    .round-meta  { font-size: .82rem; color: var(--t3); font-family: var(--mono); margin-bottom: 14px; }
 
     .bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
-    .bar-name { width: 180px; font-size: .75rem; font-weight: 500; color: var(--t2); text-align: right; flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .bar-name { width: 180px; font-size: .9rem; font-weight: 500; color: var(--t2); text-align: right; flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .bar-name.win { color: var(--blue); font-weight: 700; }
     .bar-name.out { color: var(--t3); text-decoration: line-through; }
     .bar-track { flex: 1; height: 24px; background: var(--sf2); border-radius: 5px; overflow: hidden; border: 1px solid var(--border); position: relative; }
@@ -161,9 +161,9 @@
     .bar-fill.win { background: linear-gradient(90deg, #9a5d05, var(--gold)); }
     .bar-fill.out { background: #d1d5db; }
     .quota-line { position: absolute; top:0; bottom:0; width: 2px; background: #ef4444; opacity: .6; z-index: 2; }
-    .bar-val { width: 110px; font-size: .68rem; color: var(--t3); font-family: var(--mono); flex-shrink: 0; }
+    .bar-val { width: 120px; font-size: .82rem; color: var(--t3); font-family: var(--mono); flex-shrink: 0; }
 
-    .event-note { margin-top: 12px; padding: 8px 13px; border-radius: 6px; font-size: .72rem; font-weight: 600; }
+    .event-note { margin-top: 12px; padding: 8px 13px; border-radius: 6px; font-size: .86rem; font-weight: 600; }
     .event-note.elected { background: #fef9c3; color: #854d0e; }
     .event-note.elim    { background: #fee2e2; color: var(--red); }
 
@@ -173,10 +173,10 @@
       border-radius: 10px; padding: 52px 28px;
       text-align: center; color: white;
     }
-    .ws-label { font-size: .62rem; font-weight: 800; text-transform: uppercase; letter-spacing: .18em; color: var(--gold); margin-bottom: 12px; }
-    .ws-name  { font-size: 2.4rem; font-weight: 900; letter-spacing: -.04em; line-height: 1; }
-    .ws-party { display: inline-block; margin-top: 12px; padding: 5px 18px; background: rgba(253,181,21,.14); border: 1px solid rgba(253,181,21,.28); border-radius: 20px; font-size: .76rem; font-weight: 600; color: var(--gold); }
-    .ws-votes { margin-top: 8px; font-size: .68rem; color: rgba(255,255,255,.3); font-family: var(--mono); }
+    .ws-label { font-size: .75rem; font-weight: 800; text-transform: uppercase; letter-spacing: .18em; color: var(--gold); margin-bottom: 12px; }
+    .ws-name  { font-size: 2.85rem; font-weight: 900; letter-spacing: -.04em; line-height: 1; }
+    .ws-party { display: inline-block; margin-top: 12px; padding: 5px 18px; background: rgba(253,181,21,.14); border: 1px solid rgba(253,181,21,.28); border-radius: 20px; font-size: .9rem; font-weight: 600; color: var(--gold); }
+    .ws-votes { margin-top: 8px; font-size: .82rem; color: rgba(255,255,255,.3); font-family: var(--mono); }
 
     /* all-rounds view */
     .round-block { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
@@ -185,10 +185,10 @@
     /* ── Senate seats grid ──────────────────────────────────── */
     .senate-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); gap: 10px; }
     .seat-card { display: flex; align-items: center; gap: 11px; padding: 12px 15px; background: var(--surface); border-radius: 9px; border: 1px solid var(--border); box-shadow: var(--shadow); }
-    .seat-num { width: 28px; height: 28px; border-radius: 50%; background: var(--blue); color: white; display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: .68rem; font-weight: 700; flex-shrink: 0; }
+    .seat-num { width: 28px; height: 28px; border-radius: 50%; background: var(--blue); color: white; display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: .72rem; font-weight: 700; flex-shrink: 0; }
     .seat-num.gold { background: var(--gold); color: var(--blue); }
-    .seat-name  { font-size: .82rem; font-weight: 600; line-height: 1.2; }
-    .seat-party { font-size: .68rem; color: var(--t3); }
+    .seat-name  { font-size: .96rem; font-weight: 600; line-height: 1.2; }
+    .seat-party { font-size: .82rem; color: var(--t3); }
 
     /* senate step mode */
     .seat-card.hidden-seat {
@@ -199,27 +199,27 @@
     /* ── Propositions ───────────────────────────────────────── */
     .prop-card { background: var(--surface); border-radius: var(--r); border: 1px solid var(--border); box-shadow: var(--shadow); padding: 24px; margin-bottom: 16px; }
     .prop-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; flex-wrap: wrap; gap: 8px; }
-    .prop-name { font-size: .95rem; font-weight: 700; color: var(--blue); }
-    .prop-verdict { padding: 4px 14px; border-radius: 20px; font-size: .72rem; font-weight: 700; letter-spacing: .02em; }
+    .prop-name { font-size: 1.1rem; font-weight: 700; color: var(--blue); }
+    .prop-verdict { padding: 4px 14px; border-radius: 20px; font-size: .85rem; font-weight: 700; letter-spacing: .02em; }
     .prop-verdict.passed { background: #dcfce7; color: var(--green); }
     .prop-verdict.failed { background: #fee2e2; color: var(--red); }
 
     .prop-bar-row   { display: flex; align-items: center; gap: 10px; margin-bottom: 9px; }
-    .prop-bar-label { width: 58px; font-size: .75rem; font-weight: 600; color: var(--t2); flex-shrink: 0; }
+    .prop-bar-label { width: 68px; font-size: .9rem; font-weight: 600; color: var(--t2); flex-shrink: 0; }
     .prop-bar-track { flex: 1; height: 28px; background: var(--sf2); border-radius: 7px; overflow: hidden; border: 1px solid var(--border); }
-    .prop-bar-fill  { height: 100%; border-radius: 6px; display: flex; align-items: center; padding-left: 9px; font-size: .68rem; font-weight: 700; color: white; transition: width .85s cubic-bezier(.25,.46,.45,.94); white-space: nowrap; }
+    .prop-bar-fill  { height: 100%; border-radius: 6px; display: flex; align-items: center; padding-left: 9px; font-size: .82rem; font-weight: 700; color: white; transition: width .85s cubic-bezier(.25,.46,.45,.94); white-space: nowrap; }
     .prop-bar-fill.yes     { background: var(--green); }
     .prop-bar-fill.no      { background: var(--red); }
     .prop-bar-fill.abstain { background: #9ca3af; }
-    .prop-bar-count { width: 64px; text-align: right; font-size: .7rem; color: var(--t3); font-family: var(--mono); flex-shrink: 0; }
-    .prop-info { margin-top: 14px; padding: 11px 14px; background: var(--sf2); border-radius: 7px; border: 1px solid var(--border); font-size: .71rem; color: var(--t2); line-height: 1.65; }
+    .prop-bar-count { width: 72px; text-align: right; font-size: .84rem; color: var(--t3); font-family: var(--mono); flex-shrink: 0; }
+    .prop-info { margin-top: 14px; padding: 11px 14px; background: var(--sf2); border-radius: 7px; border: 1px solid var(--border); font-size: .85rem; color: var(--t2); line-height: 1.65; }
     .prop-info strong { color: var(--text); }
     .met   { color: var(--green); font-weight: 700; }
     .unmet { color: var(--red);   font-weight: 700; }
 
     /* overview quick list */
     .ov-row { display: flex; align-items: center; gap: 10px; margin-bottom: 9px; }
-    .ov-badge { padding: 3px 10px; border-radius: 12px; font-size: .68rem; font-weight: 700; }
+    .ov-badge { padding: 3px 10px; border-radius: 12px; font-size: .78rem; font-weight: 700; }
     .ov-badge.passed { background: #dcfce7; color: var(--green); }
     .ov-badge.failed { background: #fee2e2; color: var(--red); }
     .ov-badge.winner { background: linear-gradient(135deg,var(--gold),#f0a800); color: var(--blue); }
@@ -233,7 +233,7 @@
     /* ── Present button (header) ────────────────────────────── */
     .ps-launch-btn {
       margin-left: 10px; padding: 6px 15px; border-radius: 8px;
-      font-family: inherit; font-size: .72rem; font-weight: 700;
+      font-family: inherit; font-size: .82rem; font-weight: 700;
       cursor: pointer; background: var(--gold); color: var(--blue);
       border: none; letter-spacing: .02em; transition: opacity .15s;
     }
@@ -248,11 +248,11 @@
       flex-shrink: 0; display: flex; align-items: center; gap: 14px;
       padding: 12px 28px; border-bottom: 1px solid rgba(255,255,255,.07);
     }
-    .ps-hdr-logo { font-size: .7rem; font-weight: 800; color: var(--gold); letter-spacing: .06em; }
-    .ps-counter   { font-family: var(--mono); font-size: .68rem; color: rgba(255,255,255,.28); }
+    .ps-hdr-logo { font-size: .82rem; font-weight: 800; color: var(--gold); letter-spacing: .06em; }
+    .ps-counter   { font-family: var(--mono); font-size: .78rem; color: rgba(255,255,255,.28); }
     .ps-exit-btn  {
       padding: 5px 13px; border-radius: 7px; font-family: inherit;
-      font-size: .7rem; font-weight: 600; cursor: pointer;
+      font-size: .8rem; font-weight: 600; cursor: pointer;
       background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
       color: rgba(255,255,255,.45); transition: all .14s;
     }
@@ -270,7 +270,7 @@
     }
     .ps-nav-btn {
       padding: 8px 22px; border-radius: 8px; font-family: inherit;
-      font-size: .78rem; font-weight: 600; cursor: pointer;
+      font-size: .9rem; font-weight: 600; cursor: pointer;
       background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
       color: rgba(255,255,255,.6); transition: all .14s;
     }
@@ -282,22 +282,28 @@
     /* Slide: Intro / Done */
     .ps-intro { text-align: center; max-width: 600px; }
     .ps-tag {
-      font-size: .58rem; font-weight: 800; text-transform: uppercase;
+      font-size: .72rem; font-weight: 800; text-transform: uppercase;
       letter-spacing: .2em; color: var(--gold); margin-bottom: 18px;
     }
-    .ps-name { font-size: 3rem; font-weight: 900; color: white; letter-spacing: -.04em; line-height: 1.05; margin-bottom: 10px; }
-    .ps-sub  { font-size: .88rem; color: rgba(255,255,255,.4); margin-bottom: 32px; }
-    .ps-hint { font-size: .65rem; color: rgba(255,255,255,.18); font-family: var(--mono); }
+    .ps-name { font-size: 3.6rem; font-weight: 900; color: white; letter-spacing: -.04em; line-height: 1.05; margin-bottom: 10px; }
+    .ps-sub  { font-size: 1.05rem; color: rgba(255,255,255,.4); margin-bottom: 32px; }
+    .ps-hint { font-size: .78rem; color: rgba(255,255,255,.18); font-family: var(--mono); }
+
+    /* Slide: Title (exec/senate/prop) */
+    .ps-title-slide { text-align: center; max-width: 700px; }
+    .ps-title-label { font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .22em; color: var(--gold); margin-bottom: 24px; }
+    .ps-title-main  { font-size: 4rem; font-weight: 900; color: white; letter-spacing: -.04em; line-height: 1.05; }
+    .ps-title-sub   { font-size: 1.05rem; color: rgba(255,255,255,.38); margin-top: 20px; font-weight: 500; }
 
     /* Slide: Exec round */
     .ps-round-wrap { width: 100%; max-width: 780px; }
     .ps-round-hdr { margin-bottom: 22px; }
-    .ps-race-tag   { font-size: .58rem; font-weight: 800; text-transform: uppercase; letter-spacing: .15em; color: var(--gold); margin-bottom: 4px; }
-    .ps-round-title { font-size: 1.5rem; font-weight: 800; color: white; letter-spacing: -.03em; }
-    .ps-round-meta  { font-size: .68rem; color: rgba(255,255,255,.32); font-family: var(--mono); margin-top: 3px; }
+    .ps-race-tag   { font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .15em; color: var(--gold); margin-bottom: 4px; }
+    .ps-round-title { font-size: 1.85rem; font-weight: 800; color: white; letter-spacing: -.03em; }
+    .ps-round-meta  { font-size: .82rem; color: rgba(255,255,255,.32); font-family: var(--mono); margin-top: 3px; }
 
     .ps-bar-row   { display: flex; align-items: center; gap: 10px; margin-bottom: 9px; }
-    .ps-bar-name  { width: 190px; font-size: .78rem; font-weight: 600; color: rgba(255,255,255,.7); text-align: right; flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .ps-bar-name  { width: 210px; font-size: .93rem; font-weight: 600; color: rgba(255,255,255,.7); text-align: right; flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .ps-bar-name.win { color: var(--gold); font-weight: 800; }
     .ps-bar-name.out { color: rgba(255,255,255,.22); text-decoration: line-through; }
     .ps-bar-track { flex: 1; height: 30px; background: rgba(255,255,255,.07); border-radius: 7px; overflow: hidden; position: relative; }
@@ -305,52 +311,60 @@
     .ps-bar-fill.win { background: linear-gradient(90deg, #9a5d05, var(--gold)); }
     .ps-bar-fill.out { background: rgba(255,255,255,.08); }
     .ps-quota-line { position: absolute; top:0; bottom:0; width: 2px; background: #ef4444; opacity: .45; }
-    .ps-bar-val   { width: 130px; font-size: .68rem; color: rgba(255,255,255,.35); font-family: var(--mono); flex-shrink: 0; }
-    .ps-event { margin-top: 16px; padding: 9px 15px; border-radius: 8px; font-size: .76rem; font-weight: 600; }
+    .ps-bar-val   { width: 140px; font-size: .82rem; color: rgba(255,255,255,.35); font-family: var(--mono); flex-shrink: 0; }
+    .ps-event { margin-top: 16px; padding: 9px 15px; border-radius: 8px; font-size: .9rem; font-weight: 600; }
     .ps-event.elected { background: rgba(253,181,21,.1); color: var(--gold); border: 1px solid rgba(253,181,21,.18); }
     .ps-event.elim    { background: rgba(220,38,38,.1); color: #f87171; border: 1px solid rgba(220,38,38,.15); }
 
     /* Slide: Winner */
     .ps-winner { text-align: center; }
-    .ps-winner-tag    { font-size: .58rem; font-weight: 800; text-transform: uppercase; letter-spacing: .2em; color: var(--gold); margin-bottom: 10px; }
-    .ps-winner-race   { font-size: .85rem; color: rgba(255,255,255,.35); margin-bottom: 18px; }
-    .ps-winner-name   { font-size: 3.4rem; font-weight: 900; color: white; letter-spacing: -.04em; line-height: 1; margin-bottom: 18px; }
-    .ps-winner-party  { display: inline-block; padding: 7px 24px; background: rgba(253,181,21,.1); border: 1px solid rgba(253,181,21,.22); border-radius: 20px; font-size: .8rem; font-weight: 600; color: var(--gold); }
-    .ps-winner-votes  { margin-top: 12px; font-size: .65rem; color: rgba(255,255,255,.22); font-family: var(--mono); }
+    .ps-winner-tag    { font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .2em; color: var(--gold); margin-bottom: 10px; }
+    .ps-winner-race   { font-size: 1rem; color: rgba(255,255,255,.35); margin-bottom: 18px; }
+    .ps-winner-name   { font-size: 4.1rem; font-weight: 900; color: white; letter-spacing: -.04em; line-height: 1; margin-bottom: 18px; }
+    .ps-winner-party  { display: inline-block; padding: 7px 24px; background: rgba(253,181,21,.1); border: 1px solid rgba(253,181,21,.22); border-radius: 20px; font-size: .96rem; font-weight: 600; color: var(--gold); }
+    .ps-winner-votes  { margin-top: 12px; font-size: .78rem; color: rgba(255,255,255,.22); font-family: var(--mono); }
 
     /* Slide: Senator reveal */
     .ps-senate-wrap { width: 100%; max-width: 920px; }
     .ps-senate-hdr  { margin-bottom: 20px; text-align: center; }
-    .ps-new-senator { font-size: 2.6rem; font-weight: 900; color: var(--gold); letter-spacing: -.03em; line-height: 1.1; }
-    .ps-new-party   { font-size: .82rem; color: rgba(255,255,255,.45); margin-top: 6px; margin-bottom: 20px; }
+    .ps-new-senator { font-size: 3.1rem; font-weight: 900; color: var(--gold); letter-spacing: -.03em; line-height: 1.1; }
+    .ps-new-party   { font-size: .97rem; color: rgba(255,255,255,.45); margin-top: 6px; margin-bottom: 20px; }
     .ps-senate-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(175px,1fr)); gap: 7px; }
     .ps-seat { display: flex; align-items: center; gap: 9px; padding: 9px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,.06); transition: all .3s ease; }
     .ps-seat.shown   { background: rgba(255,255,255,.05); }
     .ps-seat.new     { background: rgba(253,181,21,.12); border-color: rgba(253,181,21,.28); }
     .ps-seat.hidden-s { background: transparent; opacity: .16; }
-    .ps-seat-num { width: 23px; height: 23px; border-radius: 50%; background: rgba(255,255,255,.1); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: .6rem; font-weight: 700; color: rgba(255,255,255,.45); flex-shrink: 0; }
+    .ps-seat-num { width: 23px; height: 23px; border-radius: 50%; background: rgba(255,255,255,.1); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: .68rem; font-weight: 700; color: rgba(255,255,255,.45); flex-shrink: 0; }
     .ps-seat.new .ps-seat-num { background: var(--gold); color: var(--blue); }
-    .ps-seat-info .ps-seat-name  { font-size: .73rem; font-weight: 600; color: rgba(255,255,255,.82); }
-    .ps-seat-info .ps-seat-party { font-size: .6rem;  color: rgba(255,255,255,.3); }
+    .ps-seat-info .ps-seat-name  { font-size: .86rem; font-weight: 600; color: rgba(255,255,255,.82); }
+    .ps-seat-info .ps-seat-party { font-size: .72rem;  color: rgba(255,255,255,.3); }
 
     /* Slide: Proposition */
     .ps-prop-wrap { width: 100%; max-width: 680px; }
-    .ps-prop-name    { font-size: 1.3rem; font-weight: 800; color: white; letter-spacing: -.02em; line-height: 1.3; margin-bottom: 8px; }
-    .ps-prop-verdict { display: inline-flex; align-items: center; padding: 4px 14px; border-radius: 20px; font-size: .72rem; font-weight: 700; margin-bottom: 22px; }
+    .ps-prop-name    { font-size: 1.6rem; font-weight: 800; color: white; letter-spacing: -.02em; line-height: 1.3; margin-bottom: 8px; }
+    .ps-prop-verdict { display: inline-flex; align-items: center; padding: 4px 14px; border-radius: 20px; font-size: .85rem; font-weight: 700; margin-bottom: 22px; }
     .ps-prop-verdict.passed { background: rgba(22,163,74,.18); border: 1px solid rgba(22,163,74,.28); color: #4ade80; }
     .ps-prop-verdict.failed { background: rgba(220,38,38,.14); border: 1px solid rgba(220,38,38,.2); color: #f87171; }
     .ps-prop-bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-    .ps-prop-label   { width: 58px; font-size: .75rem; font-weight: 600; color: rgba(255,255,255,.45); flex-shrink: 0; }
+    .ps-prop-label   { width: 68px; font-size: .9rem; font-weight: 600; color: rgba(255,255,255,.45); flex-shrink: 0; }
     .ps-prop-track   { flex: 1; height: 28px; background: rgba(255,255,255,.07); border-radius: 7px; overflow: hidden; }
-    .ps-prop-fill    { height: 100%; border-radius: 6px; display: flex; align-items: center; padding-left: 9px; font-size: .68rem; font-weight: 700; color: white; transition: width .85s cubic-bezier(.25,.46,.45,.94); white-space: nowrap; }
+    .ps-prop-fill    { height: 100%; border-radius: 6px; display: flex; align-items: center; padding-left: 9px; font-size: .82rem; font-weight: 700; color: white; transition: width .85s cubic-bezier(.25,.46,.45,.94); white-space: nowrap; }
     .ps-prop-fill.yes     { background: #16a34a; }
     .ps-prop-fill.no      { background: #dc2626; }
     .ps-prop-fill.abstain { background: rgba(255,255,255,.18); }
-    .ps-prop-count   { width: 64px; text-align: right; font-size: .68rem; color: rgba(255,255,255,.32); font-family: var(--mono); flex-shrink: 0; }
-    .ps-prop-info    { padding: 11px 14px; background: rgba(255,255,255,.04); border-radius: 7px; border: 1px solid rgba(255,255,255,.08); font-size: .71rem; color: rgba(255,255,255,.45); line-height: 1.7; }
+    .ps-prop-count   { width: 72px; text-align: right; font-size: .82rem; color: rgba(255,255,255,.32); font-family: var(--mono); flex-shrink: 0; }
+    .ps-prop-info    { padding: 11px 14px; background: rgba(255,255,255,.04); border-radius: 7px; border: 1px solid rgba(255,255,255,.08); font-size: .85rem; color: rgba(255,255,255,.45); line-height: 1.7; }
     .ps-prop-info strong { color: rgba(255,255,255,.75); }
     .ps-met   { color: #4ade80; font-weight: 700; }
     .ps-unmet { color: #f87171; font-weight: 700; }
+
+    /* STV collapsible round rows */
+    .stv-round-hdr {
+      cursor: pointer; user-select: none;
+      display: flex; align-items: center; gap: 8px;
+      padding: 6px 0;
+    }
+    .stv-round-hdr:hover .round-label { color: #0055a5; }
   </style>
 </head>
 <body>
@@ -386,7 +400,7 @@
   <!-- Loading -->
   <div id="loadingDiv" class="loading">
     <div class="spinner"></div>
-    <div style="font-size:.85rem;">Loading results…</div>
+    <div style="font-size:.95rem;">Loading results…</div>
   </div>
 
   <!-- Overview -->
@@ -480,7 +494,7 @@ function init() {
 function loadErr(msg) {
   document.getElementById('loadingDiv').innerHTML =
     `<div style="color:var(--red);font-weight:700;margin-bottom:8px;">Could not load results</div>
-     <div style="font-size:.8rem;color:var(--t3);">${msg}</div>`;
+     <div style="font-size:.9rem;color:var(--t3);">${msg}</div>`;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -521,21 +535,21 @@ function renderOverview() {
   let html = '<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:4px;">';
 
   // Executive winners
-  html += '<div><div style="font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--t3);margin-bottom:12px;">Executive Winners</div>';
+  html += '<div><div style="font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--t3);margin-bottom:12px;">Executive Winners</div>';
   for (const [id, res] of Object.entries(exec)) {
     const w = res.winner;
     if (!w) continue;
-    html += `<div class="ov-row"><span class="ov-badge winner">&#10003; ${w.name}</span><span style="font-size:.78rem;color:var(--t2);">${id}</span></div>`;
+    html += `<div class="ov-row"><span class="ov-badge winner">&#10003; ${w.name}</span><span style="font-size:.9rem;color:var(--t2);">${id}</span></div>`;
   }
   html += '</div>';
 
   // Propositions
-  html += '<div><div style="font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--t3);margin-bottom:12px;">Propositions</div>';
+  html += '<div><div style="font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--t3);margin-bottom:12px;">Propositions</div>';
   for (const [id, res] of Object.entries(props)) {
     const passed = res.result === 'PASSAGE';
     html += `<div class="ov-row">
       <span class="ov-badge ${passed?'passed':'failed'}">${res.result}</span>
-      <span style="font-size:.76rem;color:var(--t2);">${id} &middot; ${res.yes_percentage.toFixed(1)}% yes</span>
+      <span style="font-size:.88rem;color:var(--t2);">${id} &middot; ${res.yes_percentage.toFixed(1)}% yes</span>
     </div>`;
   }
   html += '</div></div>';
@@ -543,7 +557,7 @@ function renderOverview() {
   // Senate elected list
   if (sen.elected) {
     html += `<div style="margin-top:28px;">
-      <div style="font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--t3);margin-bottom:12px;">Elected Senators (${sen.elected.length})</div>
+      <div style="font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--t3);margin-bottom:12px;">Elected Senators (${sen.elected.length})</div>
       <div class="senate-grid">`;
     sen.elected.forEach((s, i) => {
       html += `<div class="seat-card">
@@ -566,14 +580,14 @@ function renderExec() {
   // Selector chips
   document.getElementById('execSelector').innerHTML =
     Object.keys(races).map(id =>
-      `<div class="race-chip ${id===execRaceId?'active':''}" onclick="selectExecRace(${J(id)})">${id}</div>`
+      `<div class="race-chip ${id===execRaceId?'active':''}" data-rid="${id.replace(/"/g,'&quot;')}" onclick="selectExecRace(this.dataset.rid)">${id}</div>`
     ).join('');
 
   renderExecPanel();
 }
 
 function selectExecRace(id) {
-  execRaceId = id;
+  execRaceId = String(id);
   execStep   = 0;
   execMode   = 'step';
   renderExec();
@@ -720,7 +734,7 @@ function renderSenate() {
       </button>
     </div>
     <div style="margin-bottom:10px;display:flex;justify-content:flex-end;">
-      <button onclick="senRevealAll()" style="font-size:.7rem;color:var(--t3);background:none;border:none;cursor:pointer;text-decoration:underline;text-underline-offset:2px;" ${senStep>=elected.length?'disabled':''}>Reveal all remaining</button>
+      <button onclick="senRevealAll()" style="font-size:.8rem;color:var(--t3);background:none;border:none;cursor:pointer;text-decoration:underline;text-underline-offset:2px;" ${senStep>=elected.length?'disabled':''}>Reveal all remaining</button>
     </div>`;
   }
 
@@ -737,7 +751,7 @@ function renderSenate() {
   });
   html += '</div>';
 
-  // Round-by-round STV (collapsible)
+  // Round-by-round STV (collapsible panel, each round individually collapsible)
   if (sen.rounds) {
     html += `<button class="vt-btn" style="margin-top:22px;border-radius:8px;border:1px solid var(--border);padding:8px 16px;" onclick="toggleSTV(this)">
       &#9654; Round-by-round STV analysis (${sen.rounds.length} rounds)
@@ -748,22 +762,25 @@ function renderSenate() {
       const type = rnd.round_type === 'election' ? 'Election' : rnd.round_type === 'elimination' ? 'Elimination' : 'Final';
       const sorted = Object.entries(rnd.standings).sort((a,b)=>b[1]-a[1]);
       const mx = sorted.length ? sorted[0][1] : 1;
-      const shown = sorted.slice(0, 10);
+      const roundId = `stv-r${rnd.round_num}`;
+      const elBadges = el.map(c=>`<span style="color:var(--green);font-weight:700;"> ✓ ${c}</span>`).join('');
+      const emBadges = em.map(c=>`<span style="color:var(--red);font-weight:700;"> ✗ ${c}</span>`).join('');
       html += `<div class="round-block">
-        <div class="round-label">Round ${rnd.round_num} — ${type}</div>
-        <div class="round-meta">${Math.round(rnd.total_active_ballots)} active &nbsp;·&nbsp; Quota: ${rnd.quota}
-          ${el.map(c=>`<span style="color:var(--green);font-weight:700;"> ✓ ${c}</span>`).join('')}
-          ${em.map(c=>`<span style="color:var(--red);font-weight:700;"> ✗ ${c}</span>`).join('')}
+        <div class="stv-round-hdr" onclick="toggleSTVRound('${roundId}', this)" data-label="Round ${rnd.round_num} — ${type}">
+          <span class="round-label" style="pointer-events:none;">&#9654; Round ${rnd.round_num} — ${type}</span>
+          <span style="font-size:.8rem;color:var(--t3);font-family:var(--mono);pointer-events:none;">${sorted.length} candidates</span>
         </div>
-        ${shown.map(([name, votes]) => {
-          const isEl = el.includes(name), isEm = em.includes(name);
-          return `<div class="bar-row">
-            <div class="bar-name ${isEl?'win':isEm?'out':''}" title="${name}">${name}</div>
-            <div class="bar-track"><div class="bar-fill ${isEl?'win':isEm?'out':''}" style="width:${(votes/mx)*100}%"></div></div>
-            <div class="bar-val">${votes.toFixed(1)}</div>
-          </div>`;
-        }).join('')}
-        ${sorted.length > 10 ? `<div style="font-size:.66rem;color:var(--t3);margin-top:3px;margin-left:188px;">+ ${sorted.length-10} more</div>` : ''}
+        <div id="${roundId}" style="display:none;margin-top:8px;">
+          <div class="round-meta">${Math.round(rnd.total_active_ballots)} active &nbsp;·&nbsp; Quota: ${rnd.quota}${elBadges}${emBadges}</div>
+          ${sorted.map(([name, votes]) => {
+            const isEl = el.includes(name), isEm = em.includes(name);
+            return `<div class="bar-row">
+              <div class="bar-name ${isEl?'win':isEm?'out':''}" title="${name}">${name}</div>
+              <div class="bar-track"><div class="bar-fill ${isEl?'win':isEm?'out':''}" style="width:${(votes/mx)*100}%"></div></div>
+              <div class="bar-val">${votes.toFixed(1)}</div>
+            </div>`;
+          }).join('')}
+        </div>
       </div>`;
     });
     html += '</div>';
@@ -787,6 +804,18 @@ function toggleSTV(btn) {
     ` Round-by-round STV analysis (${DATA.senate.rounds.length} rounds)`;
 }
 
+function toggleSTVRound(id, hdr) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const isOpen = el.style.display === 'block';
+  el.style.display = isOpen ? 'none' : 'block';
+  const labelEl = hdr.querySelector('.round-label');
+  if (labelEl) {
+    const label = hdr.dataset.label;
+    labelEl.innerHTML = (isOpen ? '&#9654; ' : '&#9660; ') + label;
+  }
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
 // PROPOSITIONS
 // ─────────────────────────────────────────────────────────────────────────────
@@ -797,8 +826,6 @@ function renderProps() {
     const total    = result.yes_votes + result.no_votes + result.abstain_votes;
     const deciding = result.yes_votes + result.no_votes;
 
-    // All three bars use `total` as denominator — consistent, add to ~100%.
-    // The passage-relevant percentage (yes / deciding) is shown as a label.
     const yesW   = total > 0 ? (result.yes_votes     / total * 100) : 0;
     const noW    = total > 0 ? (result.no_votes       / total * 100) : 0;
     const absW   = total > 0 ? (result.abstain_votes  / total * 100) : 0;
@@ -808,7 +835,6 @@ function renderProps() {
     const pThresh = result.passage_threshold_pct ?? 50;
     const tThresh = result.turnout_threshold;
 
-    // Threshold info block
     let tInfo = `<strong>Passage threshold:</strong> Yes must be &gt;${pThresh.toFixed(0)}% of deciding votes (Yes + No).
       &nbsp; Yes = ${yesPct.toFixed(1)}% of deciding — <span class="${yesPct > pThresh ? 'met' : 'unmet'}">${yesPct > pThresh ? '&#10003; MET' : '&#10007; NOT MET'}</span>`;
     if (tThresh) {
@@ -888,19 +914,24 @@ function buildSlides() {
   psSlides = [];
   psSlides.push({type: 'intro'});
 
-  // One slide per round + winner for each executive race
+  // Title slide + rounds + winner for each executive race
   for (const [raceId, result] of Object.entries(DATA.executive_races)) {
+    psSlides.push({type: 'exec_title', raceId});
     const rounds = result.rounds || [];
     rounds.forEach((_, i) => psSlides.push({type: 'exec_round', raceId, roundIdx: i}));
     if (result.winner) psSlides.push({type: 'exec_winner', raceId});
   }
 
-  // One slide per senator revealed (cumulative grid)
+  // Senate title slide then one slide per senator revealed
+  psSlides.push({type: 'senate_title'});
   const elected = DATA.senate?.elected || [];
   elected.forEach((_, i) => psSlides.push({type: 'senate_reveal', revealed: i + 1}));
 
-  // One slide per proposition
-  Object.keys(DATA.propositions).forEach(propId => psSlides.push({type: 'prop', propId}));
+  // Title slide + result slide for each proposition
+  Object.keys(DATA.propositions).forEach(propId => {
+    psSlides.push({type: 'prop_title', propId});
+    psSlides.push({type: 'prop', propId});
+  });
 
   psSlides.push({type: 'done'});
 }
@@ -931,20 +962,32 @@ function showPsSlide(idx) {
   nextBtn.textContent = idx === total - 1 ? 'Done' : 'Next →';
 
   const body = document.getElementById('psBody');
-  body.innerHTML = renderPsSlide(psSlides[idx]);
+  const slide = psSlides[idx];
+  body.innerHTML = renderPsSlide(slide);
   raf(() => {
     body.querySelectorAll('[data-pw]').forEach(el => { el.style.width = el.dataset.pw + '%'; });
   });
+
+  // Confetti on winner reveals
+  const isExecWin = slide.type === 'exec_winner';
+  const isFinalSenator = slide.type === 'senate_reveal' && DATA.senate &&
+    slide.revealed === (DATA.senate.elected || []).length;
+  if (isExecWin || isFinalSenator) {
+    setTimeout(launchConfetti, 350);
+  }
 }
 
 function renderPsSlide(slide) {
   switch (slide.type) {
-    case 'intro':        return renderPsIntro();
-    case 'exec_round':   return renderPsExecRound(slide);
-    case 'exec_winner':  return renderPsExecWinner(slide);
-    case 'senate_reveal':return renderPsSenate(slide);
-    case 'prop':         return renderPsProp(slide);
-    case 'done':         return renderPsDone();
+    case 'intro':         return renderPsIntro();
+    case 'exec_title':    return renderPsExecTitle(slide);
+    case 'exec_round':    return renderPsExecRound(slide);
+    case 'exec_winner':   return renderPsExecWinner(slide);
+    case 'senate_title':  return renderPsSenatTitle();
+    case 'senate_reveal': return renderPsSenate(slide);
+    case 'prop_title':    return renderPsPropTitle(slide);
+    case 'prop':          return renderPsProp(slide);
+    case 'done':          return renderPsDone();
   }
   return '';
 }
@@ -955,6 +998,31 @@ function renderPsIntro() {
     <div class="ps-name">Election Results</div>
     <div class="ps-sub">${DATA.total_ballots.toLocaleString()} ballots cast</div>
     <div class="ps-hint">Space / &#8594; to advance &nbsp;&nbsp;·&nbsp;&nbsp; &#8592; to go back &nbsp;&nbsp;·&nbsp;&nbsp; Esc to close</div>
+  </div>`;
+}
+
+function renderPsExecTitle(slide) {
+  return `<div class="ps-title-slide">
+    <div class="ps-title-label">Executive Race</div>
+    <div class="ps-title-main">${slide.raceId}</div>
+    <div class="ps-title-sub">Instant-Runoff Voting</div>
+  </div>`;
+}
+
+function renderPsSenatTitle() {
+  const sen = DATA.senate;
+  return `<div class="ps-title-slide">
+    <div class="ps-title-label">Legislative Branch</div>
+    <div class="ps-title-main">Senate</div>
+    <div class="ps-title-sub">${sen.seats} seats &nbsp;·&nbsp; Single Transferable Vote</div>
+  </div>`;
+}
+
+function renderPsPropTitle(slide) {
+  const result = DATA.propositions[slide.propId];
+  return `<div class="ps-title-slide">
+    <div class="ps-title-label">Ballot Measure</div>
+    <div class="ps-title-main" style="font-size:3rem;">${result.proposition}</div>
   </div>`;
 }
 
@@ -1089,11 +1157,67 @@ function renderPsProp(slide) {
 
 function renderPsDone() {
   return `<div class="ps-intro">
-    <div class="ps-tag">Spring 2026 General Election</div>
-    <div class="ps-name">That's a wrap.</div>
-    <div class="ps-sub">All races have been tallied</div>
-    <div class="ps-hint" style="cursor:pointer" onclick="closePresent()">Click here or press Esc to close</div>
+    <img src="images/3LASUC2020.png" alt="ASUC" style="width:130px;height:130px;border-radius:50%;margin-bottom:28px;box-shadow:0 0 50px rgba(253,181,21,0.35),0 0 0 3px rgba(253,181,21,0.18);">
+    <div class="ps-name">ASUC Elections 2026</div>
+    <div class="ps-sub">Spring General Election</div>
+    <div class="ps-hint" style="cursor:pointer;margin-top:16px;" onclick="closePresent()">Click here or press Esc to close</div>
   </div>`;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// CONFETTI
+// ─────────────────────────────────────────────────────────────────────────────
+function launchConfetti() {
+  const canvas = document.createElement('canvas');
+  canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:10001;';
+  document.body.appendChild(canvas);
+  canvas.width  = window.innerWidth;
+  canvas.height = window.innerHeight;
+  const ctx = canvas.getContext('2d');
+
+  const colors = ['#FDB515','#FFD700','#ffffff','#003262','#4ade80','#60a5fa','#f472b6','#fb923c'];
+  const N = 200;
+  const particles = Array.from({length: N}, () => ({
+    x:    Math.random() * canvas.width,
+    y:   -20 - Math.random() * 160,
+    w:    7 + Math.random() * 9,
+    h:    3 + Math.random() * 5,
+    color: colors[Math.floor(Math.random() * colors.length)],
+    vx:   (Math.random() - 0.5) * 5,
+    vy:   1.5 + Math.random() * 4,
+    rot:  Math.random() * Math.PI * 2,
+    rotV: (Math.random() - 0.5) * 0.18,
+    alpha: 1,
+  }));
+
+  const duration = 3800;
+  let start = null, frame;
+
+  function tick(ts) {
+    if (!start) start = ts;
+    const elapsed = ts - start;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    let alive = false;
+    particles.forEach(p => {
+      p.x   += p.vx;
+      p.y   += p.vy;
+      p.vy  += 0.09;
+      p.rot += p.rotV;
+      if (elapsed > duration * 0.65) p.alpha = Math.max(0, p.alpha - 0.018);
+      if (p.y < canvas.height + 30 && p.alpha > 0) alive = true;
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rot);
+      ctx.globalAlpha = p.alpha;
+      ctx.fillStyle = p.color;
+      ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+      ctx.restore();
+    });
+    if (alive) { frame = requestAnimationFrame(tick); }
+    else { canvas.remove(); }
+  }
+  frame = requestAnimationFrame(tick);
+  setTimeout(() => { cancelAnimationFrame(frame); canvas.remove(); }, duration + 2000);
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
