@@ -925,11 +925,16 @@ function buildSlides() {
   const elected = DATA.senate?.elected || [];
   elected.forEach((_, i) => psSlides.push({type: 'senate_reveal', revealed: i + 1}));
 
-  // Executive races last — President goes last among them
+  // Executive races last — EVP second-to-last, President absolutely last
   const execEntries = Object.entries(DATA.executive_races);
-  const nonPres = execEntries.filter(([id]) => !id.toLowerCase().includes('president'));
-  const pres    = execEntries.filter(([id]) =>  id.toLowerCase().includes('president'));
-  [...nonPres, ...pres].forEach(([raceId, result]) => {
+  function execOrder(id) {
+    const l = id.toLowerCase();
+    if (l.includes('president') && !l.includes('vice')) return 99;
+    if (l.includes('executive vp') || l.includes('executive vice')) return 98;
+    return 0;
+  }
+  execEntries.sort((a, b) => execOrder(a[0]) - execOrder(b[0]));
+  execEntries.forEach(([raceId, result]) => {
     psSlides.push({type: 'exec_title', raceId});
     const rounds = result.rounds || [];
     rounds.forEach((_, i) => psSlides.push({type: 'exec_round', raceId, roundIdx: i}));
